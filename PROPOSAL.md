@@ -48,6 +48,7 @@ flowchart LR
 **Stretch (if time allows)**
 - [ ] Filter the checklist by item type
 - [ ] Hide collected items
+- [ ] **"Show next item" button:** hides the full list and shows only the next item you haven't collected, in playthrough order (location order, then `sort_order`). Checking it off moves on to the following one.
 - [ ] Item icons and game cover art
 - [ ] Hints for where to find each item
 
@@ -127,7 +128,7 @@ flowchart LR
 | **Thu 12/3** | Progress counters per item type, and overall % on the game list |
 | **Fri 12/4** | Choose game #2 and research its locations and items |
 | **Sat 12/5** | Seed game #2. Test that two games and two users stay separate. |
-| **Mon 12/7** | Styling and polish. Item type filter (stretch). |
+| **Mon 12/7** | Styling and polish. Stretch: item type filter and "Show next item" button. |
 | **Tue 12/8** | Testing and bug fixes |
 | **Wed 12/9** | Final report, README with setup steps, demo practice |
 | **Thu 12/10** | Final submission |
