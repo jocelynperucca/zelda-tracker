@@ -1,7 +1,7 @@
 # Project Log — Zelda Item Tracker
 
-**Author:** Jocelyn Perucca
-**Target effort:** 30–40 hours
+**Author:** Jocelyn Perucca  
+**Target effort:** 30–40 hours  
 **Repository:** https://github.com/jocelynperucca/zelda-tracker
 
 ---

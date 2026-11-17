@@ -1,7 +1,7 @@
 # Zelda Item Tracker — Project Proposal
 
-**Author:** Jocelyn Perucca
-**Repo:** https://github.com/jocelynperucca/zelda-tracker
+**Author:** Jocelyn Perucca  
+**Repo:** https://github.com/jocelynperucca/zelda-tracker  
 **Project log:** [PROJECT_LOG.md](PROJECT_LOG.md)
 
 ---
