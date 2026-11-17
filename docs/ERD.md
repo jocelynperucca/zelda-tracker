@@ -1,103 +1,50 @@
 # Entity Relationship Diagram
 
-```mermaid
-erDiagram
-    USERS ||--o{ USER_ITEMS : "tracks"
-    GAMES ||--o{ ITEMS : "contains"
-    CATEGORIES ||--o{ ITEMS : "groups"
-    ITEMS ||--o{ USER_ITEMS : "is tracked in"
+![Zelda Item Tracker ERD](erd.jpg)
 
-    USERS {
-        int id PK
-        string username UK
-        string email UK
-        string password_hash
-        datetime created_at
-    }
-
-    GAMES {
-        int id PK
-        string title UK
-        int release_year
-        string console
-        string cover_image_url
-    }
-
-    CATEGORIES {
-        int id PK
-        string name UK "Heart Piece, Key Item, Bottle..."
-    }
-
-    ITEMS {
-        int id PK
-        int game_id FK
-        int category_id FK
-        string name
-        string description "Where/how to get it"
-        string icon_url
-        int sort_order
-    }
-
-    USER_ITEMS {
-        int user_id PK, FK
-        int item_id PK, FK
-        boolean collected
-        datetime updated_at
-    }
-```
+*Drawn in DrawSQL.*
 
 ## Tables
 
-| Table | What it stores | Key points |
-|-------|----------------|------------|
-| **users** | People using the tracker | `username` and `email` are unique. Store a password hash, never the password. |
-| **games** | Each Zelda game (Ocarina of Time, Breath of the Wild…) | Reference data, loaded by a seed script. |
-| **categories** | Item types (Heart Piece, Key Item, Upgrade, Bottle, Dungeon Item…) | Shared across games so you can filter the same way in every game. |
-| **items** | Every trackable item in every game | Belongs to one game and one category. `sort_order` keeps the checklist in a sensible order. |
-| **user_items** | Which items each user has collected | A join table between users and items. The primary key is `(user_id, item_id)`, so a user can't have duplicate rows for the same item. |
+| Table | Primary key | What it stores |
+|-------|-------------|----------------|
+| **users** | `id` | People using the tracker. `username` and `email` are unique. Passwords are stored only as a hash. |
+| **games** | `id` | Each Zelda game. `title` is unique. |
+| **locations** | `(game_id, location_no)` | Regions and dungeons where items are found, numbered separately in each game. |
+| **item_types** | `id` | Item categories (Heart Piece, Bottle, Key Item…), shared by every game. |
+| **items** | `(game_id, item_no)` | Every individual collectible, numbered separately in each game. Each one belongs to a location and a type. |
+| **user_items** | `(user_id, game_id, item_no)` | Which items each user has collected. |
 
 ## Relationships
 
-- **Game 1 — many Items:** each item belongs to exactly one game. The same item in two games (for example the Hookshot in OoT and in Link's Awakening) gets two rows, because location and description differ per game.
-- **Category 1 — many Items:** each item has one category.
-- **User many — many Items** (through **user_items**): a user tracks many items, and an item is tracked by many users.
+| Relationship | Cardinality | Foreign key |
+|--------------|-------------|-------------|
+| games → locations | 1 to many | `locations.game_id` → `games.id` |
+| games → items | 1 to many | `items.game_id` → `games.id` |
+| locations → items | 1 to many | `items.(game_id, location_no)` → `locations.(game_id, location_no)` |
+| item_types → items | 1 to many | `items.type_id` → `item_types.id` |
+| users → user_items | 1 to many | `user_items.user_id` → `users.id` |
+| items → user_items | 1 to many | `user_items.(game_id, item_no)` → `items.(game_id, item_no)` |
 
-## How "click a game → populate the list" works
+Users and items have a **many-to-many** relationship: one user collects many items, and one item is collected by many users. The `user_items` junction table resolves it.
 
-When a user opens a game, one query returns every item for that game along with whether this user has collected it:
-
-```sql
-SELECT i.id, i.name, c.name AS category,
-       COALESCE(ui.collected, FALSE) AS collected
-FROM items i
-JOIN categories c ON c.id = i.category_id
-LEFT JOIN user_items ui
-       ON ui.item_id = i.id AND ui.user_id = :userId
-WHERE i.game_id = :gameId
-ORDER BY c.name, i.sort_order;
-```
-
-The `LEFT JOIN` matters. Items the user has never touched have no `user_items` row, and they still show up, as unchecked.
-
-Checking or unchecking an item is an upsert, which inserts the row or updates it if it already exists:
-
-```sql
-INSERT INTO user_items (user_id, item_id, collected, updated_at)
-VALUES (:userId, :itemId, :collected, CURRENT_TIMESTAMP)
-ON CONFLICT (user_id, item_id)
-DO UPDATE SET collected = excluded.collected, updated_at = excluded.updated_at;
-```
-
-Progress per game (e.g. "34 / 120") is a `COUNT` over the same join. It isn't stored anywhere, so it can never go out of sync.
+> **Note:** DrawSQL draws one line per column, so composite foreign keys show up as two lines. For example, the two lines from `user_items` to `items` are one relationship: `(game_id, item_no)`.
 
 ## Design decisions
 
-- **Users are in from the start.** Adding `user_id` later would mean changing the progress table and every query. With users built in now, a single-user version is just one hard-coded user.
-- **Categories are a table, not a text column.** This prevents typos ("Heart piece" vs "Heart Piece") and makes filtering easy.
-- **There is no row per item per user until the user touches the item.** This keeps `user_items` small, and the `LEFT JOIN` fills in the gaps.
+1. **Every heart piece is its own item.** Each item has its own location, so the checklist can be grouped by where items are found and shows exactly which ones are missing.
+2. **Counters are calculated, not stored.** The "Heart Pieces: 12 / 36" counter counts the user's collected items of that type. Storing the count separately could get out of sync with the checkboxes.
+3. **Locations belong to a game.** Kakariko Village in Ocarina of Time and in Breath of the Wild are different places with different items, so each location row is tied to a game.
+4. **Items and locations are numbered per game.** Item numbers restart at 1 in each game, so an item is identified by `(game_id, item_no)`. Because `items` uses the same `game_id` column for its game and its location, an item can't point to a location in a different game.
+5. **`user_items` has no `collected` column.** If a row exists, the item is collected. Checking a box inserts a row, and unchecking deletes it. The composite primary key stops the same item being recorded twice for one user.
+6. **Item types are a table, not free text.** Choosing from a fixed list prevents typos like "Heart piece" vs "Heart Piece" that would break the counters.
 
-## Possible extensions
+## How the features use the design
 
-- **regions** (`id`, `game_id`, `name`): dungeons and areas, with `items.region_id` so items can be grouped by where they're found.
-- **platforms** plus a **game_platforms** join table, if you want to show that a game came out on several consoles (e.g. Twilight Princess on GameCube, Wii and Wii U).
-- **user_items.notes** for personal notes on an item.
+| Feature | How it works |
+|---------|--------------|
+| Click a game → see its items grouped by location | Select `items` joined to `locations` where `game_id` matches, ordered by location and `sort_order` |
+| Show which items I've collected | `LEFT JOIN user_items` on `user_id`, `game_id` and `item_no`. Items with no matching row are unchecked. |
+| Check / uncheck an item | Insert / delete a `user_items` row |
+| Heart Piece counter | Count the user's `user_items` rows for that game whose item type is "Heart Piece", out of all Heart Piece items in that game |
+| Separate progress per user | `user_id` is part of the `user_items` key |
