@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17
+    container_name: zelda-tracker-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: zelda
+      POSTGRES_PASSWORD: zelda
+      POSTGRES_DB: zelda_tracker
+    ports:
+      - "5433:5432" # 5433 on your machine, so it doesn't clash with other Postgres containers
+    volumes:
+      - zelda-db-data:/var/lib/postgresql/data
+
+volumes:
+  zelda-db-data:
