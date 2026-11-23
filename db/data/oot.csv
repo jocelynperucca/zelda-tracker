@@ -29,6 +29,7 @@ Hyrule Castle,Inventory Item,Din's Fire,Great Fairy Fountain near the castle (ch
 Kakariko Village,Heart Piece,Heart Piece - Windmill,On the ledge inside the windmill,no
 Kakariko Village,Heart Piece,Heart Piece - Impa's House Cow,Talk to the cow inside Impa's house,no
 Kakariko Village,Heart Piece,Heart Piece - Rooftop Man,Talk to the man on the rooftop,no
+Kakariko Village,Heart Piece,Heart Piece - House of Skulltula (50 Tokens),Collect 50 Gold Skulltula Tokens and talk to the freed family member,yes
 Kakariko Village,Bottle,Bottle - Cucco Lady,Return all the Cuccos to the Cucco Lady's pen (child),no
 Kakariko Village,Song,Song of Storms,Learn it from the man in the windmill (adult),no
 Kakariko Village,Song,Nocturne of Shadow,Sheik teaches it at the village entrance (adult),no
@@ -55,6 +56,7 @@ Zora's River,Heart Piece,Heart Piece - Waterfall Ledge,On a ledge near the water
 Zora's River,Heart Piece,Heart Piece - Frogs (Song of Storms),Play the Song of Storms for the frogs,no
 Zora's River,Heart Piece,Heart Piece - Frog Song Game,Win the frogs' ocarina game,no
 Zora's River,Inventory Item,Magic Bean,Buy from the bean salesman (child),no
+Zora's Domain,Heart Piece,Heart Piece - Torch Puzzle,Light all the torches around the domain to reveal a chest (child),yes
 Zora's Domain,Upgrade,Silver Scale,Win the diving game (child),no
 Zora's Domain,Equipment,Zora Tunic,Thaw King Zora with Blue Fire (adult),no
 Zora's Fountain,Heart Piece,Heart Piece - Iceberg,On an iceberg in the frozen fountain (adult),no
