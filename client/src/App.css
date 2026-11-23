@@ -1,21 +1,174 @@
 .app {
-  max-width: 720px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 48px 16px;
+  padding: 24px 16px 64px;
 }
 
-.status {
-  padding: 12px 16px;
+h1 { margin: 8px 0 20px; }
+h2 { font-size: 1rem; margin: 0 0 12px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; color: var(--muted); }
+.error {
+  background: var(--error-bg);
+  color: var(--error);
+  padding: 10px 12px;
   border-radius: 8px;
-  background: #f0f0f0;
 }
 
-.status.ok {
-  background: #e3f4e6;
-  color: #1e5a2b;
+button { font: inherit; cursor: pointer; }
+button.link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 4px 8px;
+}
+button.link:hover { text-decoration: underline; }
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+}
+button.primary:disabled { opacity: 0.6; cursor: default; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.brand { font-weight: 700; }
+
+/* ---------- login ---------- */
+.auth-card {
+  max-width: 380px;
+  margin: 48px auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+.auth-card form { display: grid; gap: 14px; margin: 20px 0 8px; }
+.auth-card label { display: grid; gap: 4px; font-weight: 600; font-size: 0.9rem; }
+.auth-card input {
+  font: inherit;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.status.error {
-  background: #fbe4e4;
-  color: #8a1f1f;
+/* ---------- progress bars ---------- */
+.bar {
+  display: block;
+  height: 8px;
+  background: var(--track);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+
+/* ---------- game list ---------- */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.game-card {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.game-card:hover { border-color: var(--accent); }
+.game-title { font-size: 1.15rem; font-weight: 700; }
+
+/* ---------- checklist ---------- */
+.checklist-layout {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .checklist-layout { grid-template-columns: 1fr; }
+  .progress { order: -1; }
+}
+
+.location {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.location summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.location[open] summary { border-bottom: 1px solid var(--border); }
+.count { color: var(--muted); font-weight: 400; white-space: nowrap; }
+.count.complete { color: var(--accent); font-weight: 600; }
+
+.location ul { list-style: none; margin: 0; padding: 6px 0; }
+.item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.item:hover { background: var(--hover); }
+.item input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); flex-shrink: 0; }
+.item-name { font-weight: 500; }
+.item-type {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1px 8px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+.hint { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+.item.collected .item-name { text-decoration: line-through; color: var(--muted); }
+
+.progress {
+  position: sticky;
+  top: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.progress-row { margin-bottom: 12px; }
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+.progress-row.overall {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  font-weight: 700;
 }
