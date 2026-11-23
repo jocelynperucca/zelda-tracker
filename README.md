@@ -14,6 +14,7 @@ See [PROPOSAL.md](PROPOSAL.md) for the project proposal, and [docs/ERD.md](docs/
 npm run install:all              # install root, server and client packages
 cp server/.env.example server/.env
 npm run db                       # start PostgreSQL in Docker (port 5433)
+npm run db:schema                # create the tables (WARNING: wipes existing data)
 npm run dev                      # start the API (3001) and React app (5173)
 ```
 
