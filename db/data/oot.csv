@@ -32,7 +32,7 @@ Kakariko Village,Heart Piece,Heart Piece - Rooftop Man,Hookshot onto the rooftop
 Kakariko Village,Heart Piece,Heart Piece - House of Skulltula (50 Tokens),Collect 50 Gold Skulltula Tokens and talk to the freed family member,yes
 Kakariko Village,Bottle,Bottle - Cucco Lady,Round up all seven of the Cucco Lady's Cuccos and bring them back to her pen (child),yes
 Kakariko Village,Song,Song of Storms,Take out your ocarina in front of the man in the windmill (adult),yes
-Kakariko Village,Song,Nocturne of Shadow,Sheik teaches it at the village entrance (adult),no
+Kakariko Village,Song,Nocturne of Shadow,Sheik teaches it in Kakariko after you finish the Fire and Water Temples (adult),yes
 Kakariko Village,Upgrade,Big Quiver (40),Win the shooting gallery (adult),no
 Kakariko Graveyard,Heart Piece,Heart Piece - Dampe's Gravedigging,Pay Dampe for his gravedigging tour at night and dig where he stops (child),yes
 Kakariko Graveyard,Heart Piece,Heart Piece - Dampe's Race,Race Dampe again and finish in under a minute - the Longshot helps (adult),yes
@@ -103,7 +103,7 @@ Gerudo's Fortress,Quest Item,Gerudo's Card,Rescue the four carpenters (adult),no
 Gerudo's Fortress,Upgrade,Biggest Quiver (50),Score 1500 points at horseback archery (adult),no
 Gerudo Training Ground,Inventory Item,Ice Arrows,Final chest of the training ground,no
 Desert Colossus,Heart Piece,Heart Piece - Colossus Bean,Ride the bean platform (planted as a child) up to the rock arch (adult),yes
-Desert Colossus,Song,Requiem of Spirit,Sheik teaches it at the Colossus entrance (adult),no
+Desert Colossus,Song,Requiem of Spirit,Sheik teaches it at the Colossus after you find you can't get through the Spirit Temple yet (adult),yes
 Desert Colossus,Inventory Item,Nayru's Love,Great Fairy Fountain (child),no
 Spirit Temple,Upgrade,Silver Gauntlets,Chest on the child side of the Spirit Temple,no
 Spirit Temple,Equipment,Mirror Shield,Chest on the adult side of the Spirit Temple,no

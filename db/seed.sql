@@ -78,7 +78,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 31, 9, 1, 'Heart Piece - House of Skulltula (50 Tokens)', 'Collect 50 Gold Skulltula Tokens and talk to the freed family member', 4);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 32, 9, 3, 'Bottle - Cucco Lady', 'Round up all seven of the Cucco Lady''s Cuccos and bring them back to her pen (child)', 5);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 33, 9, 4, 'Song of Storms', 'Take out your ocarina in front of the man in the windmill (adult)', 6);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 34, 9, 4, 'Nocturne of Shadow', 'Sheik teaches it at the village entrance (adult)', 7);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 34, 9, 4, 'Nocturne of Shadow', 'Sheik teaches it in Kakariko after you finish the Fire and Water Temples (adult)', 7);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 35, 9, 8, 'Big Quiver (40)', 'Win the shooting gallery (adult)', 8);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 36, 10, 1, 'Heart Piece - Dampe''s Gravedigging', 'Pay Dampe for his gravedigging tour at night and dig where he stops (child)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 37, 10, 1, 'Heart Piece - Dampe''s Race', 'Race Dampe again and finish in under a minute - the Longshot helps (adult)', 2);
@@ -149,7 +149,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 102, 28, 8, 'Biggest Quiver (50)', 'Score 1500 points at horseback archery (adult)', 4);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 103, 29, 6, 'Ice Arrows', 'Final chest of the training ground', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 104, 30, 1, 'Heart Piece - Colossus Bean', 'Ride the bean platform (planted as a child) up to the rock arch (adult)', 1);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 105, 30, 4, 'Requiem of Spirit', 'Sheik teaches it at the Colossus entrance (adult)', 2);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 105, 30, 4, 'Requiem of Spirit', 'Sheik teaches it at the Colossus after you find you can''t get through the Spirit Temple yet (adult)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 106, 30, 6, 'Nayru''s Love', 'Great Fairy Fountain (child)', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 107, 31, 8, 'Silver Gauntlets', 'Chest on the child side of the Spirit Temple', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 108, 31, 7, 'Mirror Shield', 'Chest on the adult side of the Spirit Temple', 2);
