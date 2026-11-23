@@ -44,11 +44,67 @@ Six tables: `users`, `games`, `locations`, `item_types`, `items`, `user_items`. 
 |------|-------|-------|
 | 2026-11-16 | 1.0 | Project idea, planning, repo + log setup |
 | 2026-11-16 | 1.5 | ERD design, project proposal, "Show next item" idea |
-| **Total** | **2.5** | |
+| 2026-11-20 | 1.0 | Project setup: React + Express + PostgreSQL (Docker) |
+| 2026-11-23 | 1.5 | Database schema (`schema.sql`), OoT data planning |
+| **Total** | **5.0** | |
 
 ---
 
 ## Log Entries
+
+### 2026-11-23 — Database schema (1.5 hr)
+
+**What I did**
+- Wrote `db/schema.sql`, turning my ERD into `CREATE TABLE` statements for all six tables.
+- Wrote `games`, `users` and `item_types` myself and fixed my mistakes by running the file and reading Postgres's errors:
+  - I copied the `items` columns into the `users` table by accident, and reused the name `games`.
+  - Trailing commas after the last column are a syntax error.
+  - `DATETIME` is MySQL. PostgreSQL uses `TIMESTAMP`.
+  - Added `NOT NULL UNIQUE` to `username`, `email` and `item_types.name` so the database enforces the ❄ rules from my ERD.
+- Finished `locations`, `items` and `user_items` with composite primary keys and composite foreign keys.
+- Tested the rules with sample data: collecting the same item twice, pointing an item at a location that doesn't exist, duplicate location names in one game, and collecting a missing item were all blocked.
+- Added `npm run db:schema` to rebuild the tables.
+- Started planning the Ocarina of Time data: which item types to track, and listing locations in playthrough order.
+
+**What I learned / decided**
+- **Table order matters:** parent tables (`games`, `users`, `item_types`) have to be created before the tables whose foreign keys point to them.
+- Single-column keys go on the column line (`id SERIAL PRIMARY KEY`). **Composite keys go on their own line** after the columns: `PRIMARY KEY (game_id, item_no)`.
+- `SERIAL` counts up automatically, so I **don't** use it for `item_no` or `location_no`, since those restart at 1 in each game.
+- `UNIQUE (game_id, name)` means "unique within each game." Kakariko can exist in OoT and in BotW, but not twice in OoT.
+- The composite foreign key `(game_id, location_no) → locations` is what stops an OoT item pointing to a BotW location.
+- `ON DELETE CASCADE` removes a user's progress automatically if the user is deleted.
+- `DROP TABLE IF EXISTS … CASCADE` lets me rerun the schema while I develop, but it erases all data.
+
+**Challenges / questions**
+- Deciding which columns are required (`NOT NULL`). I made `password_hash` required, so every account has a password.
+- OoT has a lot of collectibles (100 Gold Skulltulas alone), so I need to decide what's in the MVP.
+
+**Next steps**
+- Pick the OoT item types for the MVP.
+- List OoT locations in playthrough order.
+- Write `db/seed.sql` (games and item types) and `db/seed_oot.sql` (locations and items).
+
+### 2026-11-20 — Project setup (1.0 hr)
+
+**What I did**
+- Set up the project in VS Code:
+  - `client/`: React app made with Vite
+  - `server/`: Express API using the `pg` library to connect to PostgreSQL
+  - `docker-compose.yml`: PostgreSQL 17 running in Docker
+- Added a `/api/health` route that queries the database, and a React page that calls it. The page showed **"✅ Connected!"**, which proves the frontend → API → database chain works.
+- Added `npm run dev` to start the server and client together, and `npm run db` to start the database.
+- Wrote setup steps in the README.
+
+**What I learned / decided**
+- My other project (Xplore) already uses port 5432 for Postgres, so this one uses **5433**.
+- Vite's **proxy** forwards `/api/...` requests from the React dev server to Express, so I don't need to set up CORS.
+- Secrets like the database URL go in `server/.env`, which is git-ignored. `.env.example` is the template that gets committed.
+
+**Challenges / questions**
+- I'm about 3 days behind my daily goals, so I need to catch up on data entry.
+
+**Next steps**
+- Write `db/schema.sql` from the ERD.
 
 ### 2026-11-16 — ERD design and project proposal (1.5 hr)
 
