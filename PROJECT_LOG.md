@@ -46,11 +46,47 @@ Six tables: `users`, `games`, `locations`, `item_types`, `items`, `user_items`. 
 | 2026-11-16 | 1.5 | ERD design, project proposal, "Show next item" idea |
 | 2026-11-20 | 1.0 | Project setup: React + Express + PostgreSQL (Docker) |
 | 2026-11-23 | 1.5 | Database schema (`schema.sql`), OoT data planning |
-| **Total** | **5.0** | |
+| 2026-11-23 | 1.5 | OoT data: scraper attempt, seed data, verified all 112 items |
+| **Total** | **6.5** | |
 
 ---
 
 ## Log Entries
+
+### 2026-11-23 — Ocarina of Time data (1.5 hr)
+
+**What I did**
+- **Tried web scraping first.** I checked each Zelda wiki's `robots.txt`, then wrote two scripts against Zeldapedia's official MediaWiki API:
+  - `scraper/explore.js` searches the wiki and lists page sections, to find where the OoT data lives.
+  - `scraper/fetch.js` downloads the raw wikitext for those sections.
+- **The scraper didn't get usable data.** Zeldapedia's OoT Heart Piece section is a one-sentence stub, and the items page has names and icons but no locations. Since locations are what my app groups by, I switched to drafting the data by hand.
+- **Drafted `db/data/oot.csv`:** 112 items across 32 locations, in playthrough order, with a `verified` column for each row.
+- **Wrote `db/generate-seed.js`,** which turns the CSV into `db/seed.sql`:
+  - Locations are numbered in the order they first appear, so `location_no` follows playthrough order (this is what "Show next item" will use).
+  - `item_no` counts up within the game, and `sort_order` counts up within each location.
+  - Added `npm run db:seed` to regenerate and load it.
+- **Verified every row against guide sites:**
+  - Heart Pieces: z64central.com. My draft had 34 of 36, so I added the House of Skulltula (50 tokens) and Zora's Domain torch puzzle pieces. All locations then matched, but I rewrote 21 hints that described the wrong method.
+  - Bottles and 10 of 12 songs: z64central.com
+  - Nocturne of Shadow and Requiem of Spirit: Zeldapedia
+  - Items, equipment, upgrades, quest items, heart containers: zeldaxtreme.com
+  - Great Fairy upgrades: zeldaxtreme.com's Great Fairy page
+- **Result: 112 / 112 rows verified.** 36 Heart Pieces, 20 Inventory Items, 12 Songs, 12 Upgrades, 10 Quest Items, 10 Equipment, 8 Heart Containers, 4 Bottles.
+
+**What I learned / decided**
+- **Check `robots.txt` before scraping.** It's where a site says what bots may access. Several Zelda wikis block AI crawlers, and Zeldapedia allows normal scripts only through its API.
+- **A scraper is only as good as the source.** The wiki had the item names but not the locations, so scraping wouldn't have saved time.
+- **Keep data separate from code:** the CSV is easy to read and fix, and a script generates the SQL from it. Adding game #2 is one new CSV and one line in the script.
+- **Verify, don't trust:** about 20% of my drafted hints had the right place but the wrong method (for example, the underwater Hyrule Field grotto is under the lone tree west of the Market, not near Gerudo Valley).
+- Kept the Skulltula-based rewards out of scope (wallets, Stone of Agony), except the 50-token Heart Piece, because without it the counter could never reach 36 / 36.
+
+**Challenges / questions**
+- Different guide sites cover different item types, so verifying took several sources.
+- Some optional capacity upgrades (Biggest Bomb Bag, Deku Seed Bag 50, stick and nut capacity) aren't in the list yet. They could be stretch additions.
+
+**Next steps**
+- API routes: `GET /games` and `GET /games/:gameId/items` (11/23 goal).
+- Frontend: game list page and checklist grouped by location (11/24 goal).
 
 ### 2026-11-23 — Database schema (1.5 hr)
 
