@@ -71,7 +71,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 24, 7, 6, 'Bombchu', 'Bombchu Shop in the back alley or prizes at Bombchu Bowling', 5);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 25, 7, 8, 'Bullet Bag (40)', 'Get a perfect score at the Castle Town shooting gallery (child)', 6);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 26, 8, 4, 'Zelda''s Lullaby', 'Impa teaches it after you meet Princess Zelda in the castle courtyard (child)', 1);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 27, 8, 6, 'Din''s Fire', 'Great Fairy at Hyrule Castle (child)', 2);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 27, 8, 6, 'Din''s Fire', 'Great Fairy at Hyrule Castle - bomb the boulder at the dead end past the gate guard (child)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 28, 9, 1, 'Heart Piece - Windmill', 'Reach the platform inside the windmill by coming up through Dampe''s grave tunnel (adult)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 29, 9, 1, 'Heart Piece - Impa''s House Cow', 'Drop onto the ledge beside Impa''s house and crawl in - the piece is next to the caged cow (child)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 30, 9, 1, 'Heart Piece - Rooftop Man', 'Hookshot onto the rooftop and talk to the man there (adult)', 3);
@@ -88,7 +88,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 41, 10, 4, 'Sun''s Song', 'Play Zelda''s Lullaby on the big grave at the back to open the Royal Family''s Tomb (child)', 6);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 42, 10, 7, 'Hylian Shield', 'Pull back a grave at night (child) or buy it at the Castle Town Bazaar for 80 rupees', 7);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 43, 11, 1, 'Heart Piece - Above Dodongo''s Cavern', 'On the ledge above the Dodongo''s Cavern entrance', 1);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 44, 11, 8, 'Magic Meter', 'Great Fairy at the summit', 2);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 44, 11, 8, 'Magic Meter', 'Great Fairy at the summit - bomb the cracked wall near the owl (also powers up the Spin Attack)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 45, 11, 7, 'Biggoron''s Sword', 'Finish the adult trading quest and Biggoron forges it', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 46, 12, 1, 'Heart Piece - Spinning Pot', 'Light the torches to start the big pot spinning then throw a bomb inside (child)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 47, 12, 8, 'Goron''s Bracelet', 'Play Saria''s Song for Darunia in his room (child)', 2);
@@ -107,7 +107,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 60, 15, 7, 'Zora Tunic', 'Thaw King Zora with Blue Fire from the Ice Cavern (adult) or buy it for 300 rupees', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 61, 16, 1, 'Heart Piece - Iceberg', 'On an iceberg in the frozen fountain (adult)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 62, 16, 1, 'Heart Piece - Fountain Floor', 'At the bottom of the fountain using Iron Boots (adult)', 2);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 63, 16, 6, 'Farore''s Wind', 'Great Fairy in Zora''s Fountain', 3);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 63, 16, 6, 'Farore''s Wind', 'Great Fairy at the back of the fountain - bomb the cracked wall', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 64, 17, 6, 'Boomerang', 'Found inside Jabu-Jabu''s Belly', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 65, 17, 2, 'Heart Container - Barinade', 'Defeat Barinade', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 66, 17, 5, 'Zora''s Sapphire', 'Princess Ruto gives it to you after Barinade', 3);
@@ -127,7 +127,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 80, 21, 1, 'Heart Piece - Crater Wall', 'Enter from the top of the crater and climb down to the alcove', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 81, 21, 1, 'Heart Piece - Volcano Bean', 'Ride the bean platform (planted near the warp pad as a child) to the top of the volcano (adult)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 82, 21, 4, 'Bolero of Fire', 'Sheik teaches it when you enter the crater - wear the Goron Tunic (adult)', 3);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 83, 21, 8, 'Double Magic', 'Great Fairy in the crater (adult)', 4);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 83, 21, 8, 'Double Magic', 'Great Fairy on the west side of the crater - smash the boulders with the Megaton Hammer (adult)', 4);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 84, 22, 6, 'Megaton Hammer', 'Found in the Fire Temple', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 85, 22, 2, 'Heart Container - Volvagia', 'Defeat Volvagia', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 86, 22, 5, 'Fire Medallion', 'Darunia gives it to you after Volvagia', 3);
@@ -150,12 +150,12 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 103, 29, 6, 'Ice Arrows', 'Final prize of the Gerudo Training Ground', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 104, 30, 1, 'Heart Piece - Colossus Bean', 'Ride the bean platform (planted as a child) up to the rock arch (adult)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 105, 30, 4, 'Requiem of Spirit', 'Sheik teaches it at the Colossus after you find you can''t get through the Spirit Temple yet (adult)', 2);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 106, 30, 6, 'Nayru''s Love', 'Great Fairy at the Desert Colossus', 3);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 106, 30, 6, 'Nayru''s Love', 'Great Fairy near the Spirit Temple - bomb the cracked wall between two palm trees', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 107, 31, 8, 'Silver Gauntlets', 'Spirit Temple - found as a child but only usable as an adult', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 108, 31, 7, 'Mirror Shield', 'Found in the Spirit Temple (adult)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 109, 31, 2, 'Heart Container - Twinrova', 'Defeat Twinrova', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 110, 31, 5, 'Spirit Medallion', 'Nabooru gives it to you after Twinrova', 4);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 111, 32, 8, 'Double Defense', 'Great Fairy outside Ganon''s Castle', 1);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 111, 32, 8, 'Double Defense', 'Great Fairy outside the castle - lift the stone pillar with the Golden Gauntlets (adult)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 112, 32, 8, 'Golden Gauntlets', 'Inside the Shadow Trial of Ganon''s Castle', 2);
 
 SELECT setval('games_id_seq', (SELECT MAX(id) FROM games));

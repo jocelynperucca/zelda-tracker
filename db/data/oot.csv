@@ -25,7 +25,7 @@ Hyrule Castle Town Market,Bottle,Bottle - Poe Collector,Catch 10 Big Poes in Hyr
 Hyrule Castle Town Market,Inventory Item,Bombchu,Bombchu Shop in the back alley or prizes at Bombchu Bowling,yes
 Hyrule Castle Town Market,Upgrade,Bullet Bag (40),Get a perfect score at the Castle Town shooting gallery (child),yes
 Hyrule Castle,Song,Zelda's Lullaby,Impa teaches it after you meet Princess Zelda in the castle courtyard (child),yes
-Hyrule Castle,Inventory Item,Din's Fire,Great Fairy at Hyrule Castle (child),yes
+Hyrule Castle,Inventory Item,Din's Fire,Great Fairy at Hyrule Castle - bomb the boulder at the dead end past the gate guard (child),yes
 Kakariko Village,Heart Piece,Heart Piece - Windmill,Reach the platform inside the windmill by coming up through Dampe's grave tunnel (adult),yes
 Kakariko Village,Heart Piece,Heart Piece - Impa's House Cow,Drop onto the ledge beside Impa's house and crawl in - the piece is next to the caged cow (child),yes
 Kakariko Village,Heart Piece,Heart Piece - Rooftop Man,Hookshot onto the rooftop and talk to the man there (adult),yes
@@ -42,7 +42,7 @@ Kakariko Graveyard,Inventory Item,Hookshot,Pull back Dampe's gravestone and win 
 Kakariko Graveyard,Song,Sun's Song,Play Zelda's Lullaby on the big grave at the back to open the Royal Family's Tomb (child),yes
 Kakariko Graveyard,Equipment,Hylian Shield,Pull back a grave at night (child) or buy it at the Castle Town Bazaar for 80 rupees,yes
 Death Mountain Trail,Heart Piece,Heart Piece - Above Dodongo's Cavern,On the ledge above the Dodongo's Cavern entrance,yes
-Death Mountain Trail,Upgrade,Magic Meter,Great Fairy at the summit,no
+Death Mountain Trail,Upgrade,Magic Meter,Great Fairy at the summit - bomb the cracked wall near the owl (also powers up the Spin Attack),yes
 Death Mountain Trail,Equipment,Biggoron's Sword,Finish the adult trading quest and Biggoron forges it,yes
 Goron City,Heart Piece,Heart Piece - Spinning Pot,Light the torches to start the big pot spinning then throw a bomb inside (child),yes
 Goron City,Upgrade,Goron's Bracelet,Play Saria's Song for Darunia in his room (child),yes
@@ -61,7 +61,7 @@ Zora's Domain,Upgrade,Silver Scale,Win the diving game at the top of the waterfa
 Zora's Domain,Equipment,Zora Tunic,Thaw King Zora with Blue Fire from the Ice Cavern (adult) or buy it for 300 rupees,yes
 Zora's Fountain,Heart Piece,Heart Piece - Iceberg,On an iceberg in the frozen fountain (adult),yes
 Zora's Fountain,Heart Piece,Heart Piece - Fountain Floor,At the bottom of the fountain using Iron Boots (adult),yes
-Zora's Fountain,Inventory Item,Farore's Wind,Great Fairy in Zora's Fountain,yes
+Zora's Fountain,Inventory Item,Farore's Wind,Great Fairy at the back of the fountain - bomb the cracked wall,yes
 Inside Jabu-Jabu's Belly,Inventory Item,Boomerang,Found inside Jabu-Jabu's Belly,yes
 Inside Jabu-Jabu's Belly,Heart Container,Heart Container - Barinade,Defeat Barinade,yes
 Inside Jabu-Jabu's Belly,Quest Item,Zora's Sapphire,Princess Ruto gives it to you after Barinade,yes
@@ -81,7 +81,7 @@ Forest Temple,Quest Item,Forest Medallion,Saria gives it to you after Phantom Ga
 Death Mountain Crater,Heart Piece,Heart Piece - Crater Wall,Enter from the top of the crater and climb down to the alcove,yes
 Death Mountain Crater,Heart Piece,Heart Piece - Volcano Bean,Ride the bean platform (planted near the warp pad as a child) to the top of the volcano (adult),yes
 Death Mountain Crater,Song,Bolero of Fire,Sheik teaches it when you enter the crater - wear the Goron Tunic (adult),yes
-Death Mountain Crater,Upgrade,Double Magic,Great Fairy in the crater (adult),no
+Death Mountain Crater,Upgrade,Double Magic,Great Fairy on the west side of the crater - smash the boulders with the Megaton Hammer (adult),yes
 Fire Temple,Inventory Item,Megaton Hammer,Found in the Fire Temple,yes
 Fire Temple,Heart Container,Heart Container - Volvagia,Defeat Volvagia,yes
 Fire Temple,Quest Item,Fire Medallion,Darunia gives it to you after Volvagia,yes
@@ -104,10 +104,10 @@ Gerudo's Fortress,Upgrade,Biggest Quiver (50),Score 1500 points at horseback arc
 Gerudo Training Ground,Inventory Item,Ice Arrows,Final prize of the Gerudo Training Ground,yes
 Desert Colossus,Heart Piece,Heart Piece - Colossus Bean,Ride the bean platform (planted as a child) up to the rock arch (adult),yes
 Desert Colossus,Song,Requiem of Spirit,Sheik teaches it at the Colossus after you find you can't get through the Spirit Temple yet (adult),yes
-Desert Colossus,Inventory Item,Nayru's Love,Great Fairy at the Desert Colossus,yes
+Desert Colossus,Inventory Item,Nayru's Love,Great Fairy near the Spirit Temple - bomb the cracked wall between two palm trees,yes
 Spirit Temple,Upgrade,Silver Gauntlets,Spirit Temple - found as a child but only usable as an adult,yes
 Spirit Temple,Equipment,Mirror Shield,Found in the Spirit Temple (adult),yes
 Spirit Temple,Heart Container,Heart Container - Twinrova,Defeat Twinrova,yes
 Spirit Temple,Quest Item,Spirit Medallion,Nabooru gives it to you after Twinrova,yes
-Ganon's Castle,Upgrade,Double Defense,Great Fairy outside Ganon's Castle,no
+Ganon's Castle,Upgrade,Double Defense,Great Fairy outside the castle - lift the stone pillar with the Golden Gauntlets (adult),yes
 Ganon's Castle,Upgrade,Golden Gauntlets,Inside the Shadow Trial of Ganon's Castle,yes
