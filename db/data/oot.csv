@@ -9,14 +9,14 @@ Inside the Deku Tree,Heart Container,Heart Container - Queen Gohma,Defeat Queen 
 Inside the Deku Tree,Quest Item,Kokiri's Emerald,The Great Deku Tree gives it to you after Gohma,no
 Lost Woods,Heart Piece,Heart Piece - Skull Kid Stump,Play Saria's Song for the Skull Kid on the stump (child),yes
 Lost Woods,Heart Piece,Heart Piece - Ocarina Memory Game,Win the ocarina memory game with the Skull Kid musicians (child),yes
-Sacred Forest Meadow,Song,Saria's Song,Saria teaches it at the center of the meadow (child),no
-Sacred Forest Meadow,Song,Minuet of Forest,Sheik teaches it in the meadow (adult),no
+Sacred Forest Meadow,Song,Saria's Song,Saria teaches it in the meadow once you know Zelda's Lullaby (child),yes
+Sacred Forest Meadow,Song,Minuet of Forest,Sheik teaches it when you return to the meadow after getting the Hookshot (adult),yes
 Hyrule Field,Heart Piece,Heart Piece - Deku Scrub Grotto,Bomb the fenced spot near the Lake Hylia entrance and buy it from the scrub inside,yes
 Hyrule Field,Heart Piece,Heart Piece - Underwater Grotto,Bomb the lone tree west of the Market and dive in the grotto (Golden Scale or Iron Boots),yes
 Hyrule Field,Inventory Item,Ocarina of Time,Zelda throws it into the moat at the castle drawbridge,no
-Hyrule Field,Song,Song of Time,Learned from Zelda right after getting the Ocarina of Time,no
+Hyrule Field,Song,Song of Time,Learned after getting the Ocarina of Time at the castle drawbridge (after all 3 Spiritual Stones),yes
 Lon Lon Ranch,Heart Piece,Heart Piece - Silo,Behind the crates inside the silo (child),yes
-Lon Lon Ranch,Song,Epona's Song,Malon teaches it in the corral (child),no
+Lon Lon Ranch,Song,Epona's Song,Talk to Malon until she mentions her mother then take out your ocarina (child),yes
 Lon Lon Ranch,Bottle,Bottle - Talon's Cucco Game,Win Talon's Cucco-finding game (10 rupees a try); the bottle comes filled with milk (child),yes
 Hyrule Castle Town Market,Heart Piece,Heart Piece - Bombchu Bowling,One of the Bombchu Bowling Alley prizes,yes
 Hyrule Castle Town Market,Heart Piece,Heart Piece - Treasure Chest Game,Win the Treasure Chest Game (Lens of Truth helps),yes
@@ -24,14 +24,14 @@ Hyrule Castle Town Market,Heart Piece,Heart Piece - Lost Dog,Bring the lost dog 
 Hyrule Castle Town Market,Bottle,Bottle - Poe Collector,Catch 10 Big Poes in Hyrule Field on Epona and sell them at the Ghost Shop (adult),yes
 Hyrule Castle Town Market,Inventory Item,Bombchu,Buy them at the Bombchu Shop,no
 Hyrule Castle Town Market,Upgrade,Bullet Bag (40),Win the slingshot shooting gallery (child),no
-Hyrule Castle,Song,Zelda's Lullaby,Impa teaches it after you meet Zelda,no
+Hyrule Castle,Song,Zelda's Lullaby,Impa teaches it after you meet Princess Zelda in the castle courtyard (child),yes
 Hyrule Castle,Inventory Item,Din's Fire,Great Fairy Fountain near the castle (child; play Zelda's Lullaby),no
 Kakariko Village,Heart Piece,Heart Piece - Windmill,Reach the platform inside the windmill by coming up through Dampe's grave tunnel (adult),yes
 Kakariko Village,Heart Piece,Heart Piece - Impa's House Cow,Drop onto the ledge beside Impa's house and crawl in - the piece is next to the caged cow (child),yes
 Kakariko Village,Heart Piece,Heart Piece - Rooftop Man,Hookshot onto the rooftop and talk to the man there (adult),yes
 Kakariko Village,Heart Piece,Heart Piece - House of Skulltula (50 Tokens),Collect 50 Gold Skulltula Tokens and talk to the freed family member,yes
 Kakariko Village,Bottle,Bottle - Cucco Lady,Round up all seven of the Cucco Lady's Cuccos and bring them back to her pen (child),yes
-Kakariko Village,Song,Song of Storms,Learn it from the man in the windmill (adult),no
+Kakariko Village,Song,Song of Storms,Take out your ocarina in front of the man in the windmill (adult),yes
 Kakariko Village,Song,Nocturne of Shadow,Sheik teaches it at the village entrance (adult),no
 Kakariko Village,Upgrade,Big Quiver (40),Win the shooting gallery (adult),no
 Kakariko Graveyard,Heart Piece,Heart Piece - Dampe's Gravedigging,Pay Dampe for his gravedigging tour at night and dig where he stops (child),yes
@@ -39,7 +39,7 @@ Kakariko Graveyard,Heart Piece,Heart Piece - Dampe's Race,Race Dampe again and f
 Kakariko Graveyard,Heart Piece,Heart Piece - Bean Ledge,Ride the bean platform (planted as a child) to the ledge and roll into the crate (adult),yes
 Kakariko Graveyard,Heart Piece,Heart Piece - ReDead Grave,Play the Sun's Song inside the grave with the ReDead,yes
 Kakariko Graveyard,Inventory Item,Hookshot,Win Dampe's race (adult),no
-Kakariko Graveyard,Song,Sun's Song,Royal Family's Tomb (child),no
+Kakariko Graveyard,Song,Sun's Song,Play Zelda's Lullaby on the big grave at the back to open the Royal Family's Tomb (child),yes
 Kakariko Graveyard,Equipment,Hylian Shield,Inside a grave (child) or buy at the Kakariko Bazaar,no
 Death Mountain Trail,Heart Piece,Heart Piece - Above Dodongo's Cavern,On the ledge above the Dodongo's Cavern entrance,yes
 Death Mountain Trail,Upgrade,Magic Meter,Great Fairy at the summit,no
@@ -72,7 +72,7 @@ Lake Hylia,Bottle,Bottle - Ruto's Letter,At the bottom of the lake near the Zora
 Lake Hylia,Upgrade,Golden Scale,Catch a big fish at the fishing pond (adult),no
 Lake Hylia,Inventory Item,Fire Arrows,Shoot an arrow at the sunrise from the island (adult),no
 Temple of Time,Equipment,Master Sword,Pull it from the Pedestal of Time,no
-Temple of Time,Song,Prelude of Light,Sheik teaches it inside the temple (adult),no
+Temple of Time,Song,Prelude of Light,Sheik teaches it when you return to the Temple of Time after the Forest Temple (adult),yes
 Temple of Time,Quest Item,Light Medallion,Rauru gives it to you in the Chamber of Sages,no
 Temple of Time,Inventory Item,Light Arrows,Zelda gives them to you near the end of the game,no
 Forest Temple,Inventory Item,Fairy Bow,Chest after defeating the Stalfos,no
@@ -80,13 +80,13 @@ Forest Temple,Heart Container,Heart Container - Phantom Ganon,Defeat Phantom Gan
 Forest Temple,Quest Item,Forest Medallion,Saria gives it to you after Phantom Ganon,no
 Death Mountain Crater,Heart Piece,Heart Piece - Crater Wall,Enter from the top of the crater and climb down to the alcove,yes
 Death Mountain Crater,Heart Piece,Heart Piece - Volcano Bean,Ride the bean platform (planted near the warp pad as a child) to the top of the volcano (adult),yes
-Death Mountain Crater,Song,Bolero of Fire,Sheik teaches it at the crater entrance (adult),no
+Death Mountain Crater,Song,Bolero of Fire,Sheik teaches it when you enter the crater - wear the Goron Tunic (adult),yes
 Death Mountain Crater,Upgrade,Double Magic,Great Fairy in the crater (adult),no
 Fire Temple,Inventory Item,Megaton Hammer,Chest inside the Fire Temple,no
 Fire Temple,Heart Container,Heart Container - Volvagia,Defeat Volvagia,no
 Fire Temple,Quest Item,Fire Medallion,Darunia gives it to you after Volvagia,no
 Ice Cavern,Heart Piece,Heart Piece - Ice Cavern,Frozen in red ice (use Blue Fire),yes
-Ice Cavern,Song,Serenade of Water,Sheik teaches it at the end of the cavern,no
+Ice Cavern,Song,Serenade of Water,Sheik teaches it after you finish the Ice Cavern (adult),yes
 Ice Cavern,Equipment,Iron Boots,Chest at the end of the cavern,no
 Water Temple,Inventory Item,Longshot,Chest after defeating Dark Link,no
 Water Temple,Heart Container,Heart Container - Morpha,Defeat Morpha,no
