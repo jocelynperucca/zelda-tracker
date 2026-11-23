@@ -63,11 +63,11 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 16, 5, 4, 'Song of Time', 'Learned from Zelda right after getting the Ocarina of Time', 4);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 17, 6, 1, 'Heart Piece - Silo', 'Behind the crates inside the silo (child)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 18, 6, 4, 'Epona''s Song', 'Malon teaches it in the corral (child)', 2);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 19, 6, 3, 'Bottle - Talon''s Cucco Game', 'Win Talon''s Cucco-finding game (child); it comes filled with milk', 3);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 19, 6, 3, 'Bottle - Talon''s Cucco Game', 'Win Talon''s Cucco-finding game (10 rupees a try); the bottle comes filled with milk (child)', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 20, 7, 1, 'Heart Piece - Bombchu Bowling', 'One of the Bombchu Bowling Alley prizes', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 21, 7, 1, 'Heart Piece - Treasure Chest Game', 'Win the Treasure Chest Game (Lens of Truth helps)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 22, 7, 1, 'Heart Piece - Lost Dog', 'Bring the lost dog back to the woman in the back alley at night (child)', 3);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 23, 7, 3, 'Bottle - Poe Collector', 'Sell 10 Big Poes to the Poe Collector (adult)', 4);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 23, 7, 3, 'Bottle - Poe Collector', 'Catch 10 Big Poes in Hyrule Field on Epona and sell them at the Ghost Shop (adult)', 4);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 24, 7, 6, 'Bombchu', 'Buy them at the Bombchu Shop', 5);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 25, 7, 8, 'Bullet Bag (40)', 'Win the slingshot shooting gallery (child)', 6);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 26, 8, 4, 'Zelda''s Lullaby', 'Impa teaches it after you meet Zelda', 1);
@@ -76,7 +76,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 29, 9, 1, 'Heart Piece - Impa''s House Cow', 'Drop onto the ledge beside Impa''s house and crawl in - the piece is next to the caged cow (child)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 30, 9, 1, 'Heart Piece - Rooftop Man', 'Hookshot onto the rooftop and talk to the man there (adult)', 3);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 31, 9, 1, 'Heart Piece - House of Skulltula (50 Tokens)', 'Collect 50 Gold Skulltula Tokens and talk to the freed family member', 4);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 32, 9, 3, 'Bottle - Cucco Lady', 'Return all the Cuccos to the Cucco Lady''s pen (child)', 5);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 32, 9, 3, 'Bottle - Cucco Lady', 'Round up all seven of the Cucco Lady''s Cuccos and bring them back to her pen (child)', 5);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 33, 9, 4, 'Song of Storms', 'Learn it from the man in the windmill (adult)', 6);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 34, 9, 4, 'Nocturne of Shadow', 'Sheik teaches it at the village entrance (adult)', 7);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 35, 9, 8, 'Big Quiver (40)', 'Win the shooting gallery (adult)', 8);
@@ -114,7 +114,7 @@ INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_orde
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 67, 18, 1, 'Heart Piece - Lab Roof', 'Get onto the lab roof with a bean platform or Scarecrow''s Song (adult)', 1);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 68, 18, 1, 'Heart Piece - Lab Diving', 'Dive to the bottom of the lab''s tank (needs the Golden Scale)', 2);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 69, 18, 1, 'Heart Piece - Fishing Pond', 'Catch a big fish at the fishing pond (child)', 3);
-INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 70, 18, 3, 'Bottle - Ruto''s Letter', 'Underwater near the shore (child)', 4);
+INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 70, 18, 3, 'Bottle - Ruto''s Letter', 'At the bottom of the lake near the Zora''s Domain warp - needs the Silver Scale; show the letter to King Zora (child)', 4);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 71, 18, 8, 'Golden Scale', 'Catch a big fish at the fishing pond (adult)', 5);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 72, 18, 6, 'Fire Arrows', 'Shoot an arrow at the sunrise from the island (adult)', 6);
 INSERT INTO items (game_id, item_no, location_no, type_id, name, hint, sort_order) VALUES (1, 73, 19, 7, 'Master Sword', 'Pull it from the Pedestal of Time', 1);

@@ -17,11 +17,11 @@ Hyrule Field,Inventory Item,Ocarina of Time,Zelda throws it into the moat at the
 Hyrule Field,Song,Song of Time,Learned from Zelda right after getting the Ocarina of Time,no
 Lon Lon Ranch,Heart Piece,Heart Piece - Silo,Behind the crates inside the silo (child),yes
 Lon Lon Ranch,Song,Epona's Song,Malon teaches it in the corral (child),no
-Lon Lon Ranch,Bottle,Bottle - Talon's Cucco Game,Win Talon's Cucco-finding game (child); it comes filled with milk,no
+Lon Lon Ranch,Bottle,Bottle - Talon's Cucco Game,Win Talon's Cucco-finding game (10 rupees a try); the bottle comes filled with milk (child),yes
 Hyrule Castle Town Market,Heart Piece,Heart Piece - Bombchu Bowling,One of the Bombchu Bowling Alley prizes,yes
 Hyrule Castle Town Market,Heart Piece,Heart Piece - Treasure Chest Game,Win the Treasure Chest Game (Lens of Truth helps),yes
 Hyrule Castle Town Market,Heart Piece,Heart Piece - Lost Dog,Bring the lost dog back to the woman in the back alley at night (child),yes
-Hyrule Castle Town Market,Bottle,Bottle - Poe Collector,Sell 10 Big Poes to the Poe Collector (adult),no
+Hyrule Castle Town Market,Bottle,Bottle - Poe Collector,Catch 10 Big Poes in Hyrule Field on Epona and sell them at the Ghost Shop (adult),yes
 Hyrule Castle Town Market,Inventory Item,Bombchu,Buy them at the Bombchu Shop,no
 Hyrule Castle Town Market,Upgrade,Bullet Bag (40),Win the slingshot shooting gallery (child),no
 Hyrule Castle,Song,Zelda's Lullaby,Impa teaches it after you meet Zelda,no
@@ -30,7 +30,7 @@ Kakariko Village,Heart Piece,Heart Piece - Windmill,Reach the platform inside th
 Kakariko Village,Heart Piece,Heart Piece - Impa's House Cow,Drop onto the ledge beside Impa's house and crawl in - the piece is next to the caged cow (child),yes
 Kakariko Village,Heart Piece,Heart Piece - Rooftop Man,Hookshot onto the rooftop and talk to the man there (adult),yes
 Kakariko Village,Heart Piece,Heart Piece - House of Skulltula (50 Tokens),Collect 50 Gold Skulltula Tokens and talk to the freed family member,yes
-Kakariko Village,Bottle,Bottle - Cucco Lady,Return all the Cuccos to the Cucco Lady's pen (child),no
+Kakariko Village,Bottle,Bottle - Cucco Lady,Round up all seven of the Cucco Lady's Cuccos and bring them back to her pen (child),yes
 Kakariko Village,Song,Song of Storms,Learn it from the man in the windmill (adult),no
 Kakariko Village,Song,Nocturne of Shadow,Sheik teaches it at the village entrance (adult),no
 Kakariko Village,Upgrade,Big Quiver (40),Win the shooting gallery (adult),no
@@ -68,7 +68,7 @@ Inside Jabu-Jabu's Belly,Quest Item,Zora's Sapphire,Princess Ruto gives it to yo
 Lake Hylia,Heart Piece,Heart Piece - Lab Roof,Get onto the lab roof with a bean platform or Scarecrow's Song (adult),yes
 Lake Hylia,Heart Piece,Heart Piece - Lab Diving,Dive to the bottom of the lab's tank (needs the Golden Scale),yes
 Lake Hylia,Heart Piece,Heart Piece - Fishing Pond,Catch a big fish at the fishing pond (child),yes
-Lake Hylia,Bottle,Bottle - Ruto's Letter,Underwater near the shore (child),no
+Lake Hylia,Bottle,Bottle - Ruto's Letter,At the bottom of the lake near the Zora's Domain warp - needs the Silver Scale; show the letter to King Zora (child),yes
 Lake Hylia,Upgrade,Golden Scale,Catch a big fish at the fishing pond (adult),no
 Lake Hylia,Inventory Item,Fire Arrows,Shoot an arrow at the sunrise from the island (adult),no
 Temple of Time,Equipment,Master Sword,Pull it from the Pedestal of Time,no
