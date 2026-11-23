@@ -15,6 +15,7 @@ npm run install:all              # install root, server and client packages
 cp server/.env.example server/.env
 npm run db                       # start PostgreSQL in Docker (port 5433)
 npm run db:schema                # create the tables (WARNING: wipes existing data)
+npm run db:seed                  # load game data from db/data/*.csv (WARNING: wipes progress)
 npm run dev                      # start the API (3001) and React app (5173)
 ```
 

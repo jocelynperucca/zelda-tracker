@@ -3,3 +3,6 @@ node_modules/
 dist/
 *.log
 .DS_Store
+
+# Raw scraped wiki pages (wiki content, not ours to republish)
+scraper/raw/
