@@ -47,11 +47,54 @@ Six tables: `users`, `games`, `locations`, `item_types`, `items`, `user_items`. 
 | 2026-11-20 | 1.0 | Project setup: React + Express + PostgreSQL (Docker) |
 | 2026-11-23 | 1.5 | Database schema (`schema.sql`), OoT data planning |
 | 2026-11-23 | 1.5 | OoT data: scraper attempt, seed data, verified all 112 items |
-| **Total** | **6.5** | |
+| 2026-11-23 | 1.5 | API routes, login, game list, checklist with collect/uncollect |
+| **Total** | **8.0** | |
 
 ---
 
 ## Log Entries
+
+### 2026-11-23 — API, login and checklist (1.5 hr)
+
+**What I did**
+- **API routes** (server):
+  - `GET /api/games`: every game in release-year order, with the logged-in user's progress (`collected / total`)
+  - `GET /api/games/:gameId/items`: the checklist, grouped by location in playthrough order, with `collected` true or false for each item
+  - `POST` / `DELETE /api/games/:gameId/items/:itemNo/collect`: check and uncheck an item
+  - Split the server into `auth.js` (accounts) and `games.js` (checklist) using Express Routers
+- **User accounts:**
+  - `POST /api/auth/register` and `/login`. Passwords are hashed with **bcrypt**. Logging in returns a **JWT** that lasts 7 days.
+  - `requireAuth` middleware reads the token from the `Authorization: Bearer …` header, and every games route uses it
+  - `GET /api/auth/me` checks a saved token on page load
+- **Frontend** (React):
+  - `Login.jsx`: one form that switches between "Log in" and "Create account"
+  - `GameList.jsx`: game cards with progress bars
+  - `Checklist.jsx`: each location is a collapsible `<details>` section with a count like "2 / 5". Each item has a checkbox, type tag and hint. A Progress panel shows counters for each item type plus Overall.
+  - `api.js`: a helper that attaches the token to every request and turns errors into readable messages
+- **Tested in the browser:** register, log in, check an item (saved to the database), uncheck it (row deleted), reload (still logged in, progress kept). Error cases: duplicate username, wrong password, item that doesn't exist, non-numeric game id.
+
+**What I learned / decided**
+- **URL parameters:** `/api/games/:gameId/items` gives the code `req.params.gameId`.
+- **SQL injection:** never paste user input into SQL text. `$1` placeholders send the values separately.
+- **The ERD query works as planned:** `LEFT JOIN user_items … AND ui.user_id = $2` means uncollected items have no matching row, so they come back as `collected = false`.
+- **Check = INSERT, uncheck = DELETE,** because a row existing means collected. `ON CONFLICT DO NOTHING` makes checking twice harmless.
+- **Postgres error codes** become friendly messages: `23505` (unique) → "That username is already taken", `23503` (foreign key) → "Item not found".
+- **Login security:**
+  - Store a bcrypt hash, never the password.
+  - Show the same message for "wrong username" and "wrong password", so attackers can't find out which usernames exist.
+  - Keep `JWT_SECRET` in `.env`, off GitHub.
+- **Optimistic updates:** the checkbox changes on screen immediately, then saves. If the save fails, it flips back and shows an error.
+- **Edge case found while testing:** a deleted account's old token still passed `/me`. I fixed `/me` to check that the user still exists.
+- The counters are calculated from the checklist data, not stored, as planned in the ERD.
+
+**Challenges / questions**
+- The token is kept in `localStorage`. That's simple but readable by any script on the page; an httpOnly cookie is safer. That's fine for a local class project, but worth knowing.
+- With this session I'm ahead of schedule. I've finished the goals for 11/24, 11/30, 12/1, 12/2 and most of 12/3.
+
+**Next steps**
+- Choose and enter game #2.
+- "Show next item" button.
+- Styling and polish, plus testing with two users.
 
 ### 2026-11-23 — Ocarina of Time data (1.5 hr)
 
