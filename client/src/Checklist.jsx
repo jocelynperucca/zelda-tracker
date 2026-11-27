@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api } from './api'
 import ProgressRing from './ProgressRing'
+import NextItem from './NextItem'
 
 // Order of the counters in the Progress panel
 const TYPE_ORDER = [
@@ -14,6 +15,7 @@ const typeClass = (type) => 'type-' + type.toLowerCase().replace(/[^a-z]+/g, '-'
 function Checklist({ gameId, onBack, onAuthError }) {
   const [data, setData] = useState(null) // { game, locations: [{ locationNo, name, items: [...] }] }
   const [error, setError] = useState(null)
+  const [mode, setMode] = useState('list') // 'list' = full checklist, 'next' = one item at a time
 
   useEffect(() => {
     api(`/games/${gameId}/items`)
@@ -74,9 +76,20 @@ function Checklist({ gameId, onBack, onAuthError }) {
         </div>
         <ProgressRing value={collectedTotal} total={allItems.length} size={80} stroke={7} />
       </div>
+      <div className="mode-toggle" role="group" aria-label="View">
+        <button className={mode === 'list' ? 'active' : ''} aria-pressed={mode === 'list'} onClick={() => setMode('list')}>
+          Full list
+        </button>
+        <button className={mode === 'next' ? 'active' : ''} aria-pressed={mode === 'next'} onClick={() => setMode('next')}>
+          Show next item
+        </button>
+      </div>
       {error && <p className="error">{error}</p>}
 
       <div className="checklist-layout">
+        {mode === 'next' ? (
+          <NextItem locations={data.locations} onToggle={toggle} />
+        ) : (
         <div className="locations">
           {data.locations.map((loc) => {
             const done = loc.items.filter((i) => i.collected).length
@@ -111,6 +124,7 @@ function Checklist({ gameId, onBack, onAuthError }) {
             )
           })}
         </div>
+        )}
 
         <aside className="panel progress">
           <h2>Progress</h2>
