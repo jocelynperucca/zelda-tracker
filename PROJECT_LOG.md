@@ -48,11 +48,49 @@ Six tables: `users`, `games`, `locations`, `item_types`, `items`, `user_items`. 
 | 2026-11-23 | 1.5 | Database schema (`schema.sql`), OoT data planning |
 | 2026-11-23 | 1.5 | OoT data: scraper attempt, seed data, verified all 112 items |
 | 2026-11-23 | 1.5 | API routes, login, game list, checklist with collect/uncollect |
-| **Total** | **8.0** | |
+| 2026-11-27 | 2.0 | Presentation deck, Zelda redesign, "Show next item" feature |
+| **Total** | **10.0** | |
 
 ---
 
 ## Log Entries
+
+### 2026-11-27 — Presentation, redesign and "Show next item" (2.0 hr)
+
+**What I did**
+- **Presentation requirements:** looked through the course on Canvas. There's no outline for the in-class presentation, so I based it on the sections the **Final Project and Report** requires: summary, diagrams, demo, learnings, AI use, why it interests me, and auth/concurrency/scaling. I also noted the **Collaboration and Reviews** assignment (3+ hours of collaboration, PDF due Dec 10).
+- **Slide deck** (`docs/presentation.pptx`), 11 slides with speaker notes:
+  - Why I built it, what it does, live demo, system design, ERD, getting the data
+  - How I used AI, security and reliability, what I learned, what's next
+  - Built to upload into Google Slides
+- **App screenshots** saved in `docs/screenshots/` for the deck and the final report.
+- **Redesigned the app with a Zelda theme ("Hyrule at night"):**
+  - A Triforce logo and favicon replaced the Vite defaults
+  - Cinzel headings, parchment-colored text, forest-green panels and gold accents
+  - Progress rings on the game cards and the checklist, plus a small progress bar for each location
+  - Custom gold checkboxes, and a color for each item type on its tag and in the Progress panel
+- **"Show next item" mode:** a Full list / Show next item toggle on the checklist. It shows one card with the first uncollected item in playthrough order, plus:
+  - **Got it** (saves the item and moves on) and **Undo**
+  - **Skip for now**, with a link to bring skipped items back
+  - A **Coming up** list of the next 3 items
+  - An "Every item collected!" screen at 100%
+- **Tested** with a temporary account: Got it, Undo (row removed from the database), Skip, and the 112/112 screen. Then I deleted the test account.
+
+**What I learned / decided**
+- **The ERD decision paid off:** because locations were numbered in playthrough order from the start, "next item" is just the first uncollected item in the order the API already returns. No schema or API changes were needed.
+- **Undo reuses the same toggle:** "Got it" and "Undo" both call the existing check/uncheck code, so it's the same `INSERT` and `DELETE` as the checkboxes.
+- **Skips stay on the page only:** they aren't saved to the database. They're a temporary "not now," not real progress.
+- **Hiding a checkbox the accessible way:** the real `<input>` stays in the page (invisible but focusable) and a styled `<span>` draws the box, so the keyboard and screen readers still work.
+- **Design variables:** all colors and fonts live in CSS variables in `index.css`, so restyling later is one place to change.
+
+**Challenges / questions**
+- I couldn't preview the slides on my machine, so I need to check them after uploading to Google Slides.
+- The deck's "What's next" slide still lists "Show next item" as upcoming, so I need to update it.
+
+**Next steps**
+- Game #2: Twilight Princess or Skyward Sword.
+- Filter by item type, and test with two users.
+- Collaboration hours and the final report (due Dec 10).
 
 ### 2026-11-23 — API, login and checklist (1.5 hr)
 
