@@ -3,6 +3,7 @@ import { api, getToken, setToken } from './api'
 import Login from './Login'
 import GameList from './GameList'
 import Checklist from './Checklist'
+import Triforce from './Triforce'
 import './App.css'
 
 function App() {
@@ -30,18 +31,27 @@ function App() {
     setSelectedGameId(null)
   }, [])
 
-  if (checkingLogin) return <main className="app"><p className="muted">Loading…</p></main>
+  if (checkingLogin) {
+    return (
+      <main className="app center">
+        <Triforce size={48} className="pulse" />
+      </main>
+    )
+  }
 
   if (!user) return <main className="app"><Login onLoggedIn={handleLoggedIn} /></main>
 
   return (
     <main className="app">
       <header className="topbar">
-        <span className="brand">🗡️ Zelda Item Tracker</span>
-        <span>
-          <span className="muted">{user.username}</span>
+        <button className="brand" onClick={() => setSelectedGameId(null)}>
+          <Triforce size={26} />
+          <span>Zelda Item Tracker</span>
+        </button>
+        <div className="user">
+          <span className="user-pill">{user.username}</span>
           <button className="link" onClick={logOut}>Log out</button>
-        </span>
+        </div>
       </header>
 
       {selectedGameId === null ? (

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { api } from './api'
+import Triforce from './Triforce'
 
 // One form that switches between "Log in" and "Create account".
 function Login({ onLoggedIn }) {
@@ -29,45 +30,49 @@ function Login({ onLoggedIn }) {
   }
 
   return (
-    <div className="auth-card">
-      <h1>Zelda Item Tracker</h1>
-      <p className="muted">Track every Heart Piece, song and item across the Zelda games.</p>
+    <div className="auth">
+      <Triforce size={72} className="auth-emblem" />
+      <h1 className="auth-title">Zelda Item Tracker</h1>
+      <p className="auth-tagline">Every Heart Piece, song and item, across every adventure.</p>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          {isRegister ? 'Username' : 'Username or email'}
-          <input value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" required />
-        </label>
-
-        {isRegister && (
+      <div className="panel auth-card">
+        <h2>{isRegister ? 'Create your account' : 'Welcome back'}</h2>
+        <form onSubmit={handleSubmit}>
           <label>
-            Email
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required />
+            {isRegister ? 'Username' : 'Username or email'}
+            <input value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" required />
           </label>
-        )}
 
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete={isRegister ? 'new-password' : 'current-password'}
-            minLength={isRegister ? 8 : undefined}
-            required
-          />
-        </label>
+          {isRegister && (
+            <label>
+              Email
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required />
+            </label>
+          )}
 
-        {error && <p className="error">{error}</p>}
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete={isRegister ? 'new-password' : 'current-password'}
+              minLength={isRegister ? 8 : undefined}
+              required
+            />
+          </label>
 
-        <button type="submit" className="primary" disabled={busy}>
-          {busy ? 'Please wait…' : isRegister ? 'Create account' : 'Log in'}
+          {error && <p className="error">{error}</p>}
+
+          <button type="submit" className="primary" disabled={busy}>
+            {busy ? 'Please wait…' : isRegister ? 'Create account' : 'Log in'}
+          </button>
+        </form>
+
+        <button className="link switch" onClick={() => { setMode(isRegister ? 'login' : 'register'); setError(null) }}>
+          {isRegister ? 'Already have an account? Log in' : 'New here? Create an account'}
         </button>
-      </form>
-
-      <button className="link" onClick={() => { setMode(isRegister ? 'login' : 'register'); setError(null) }}>
-        {isRegister ? 'Already have an account? Log in' : 'New here? Create an account'}
-      </button>
+      </div>
     </div>
   )
 }

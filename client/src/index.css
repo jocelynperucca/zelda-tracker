@@ -1,37 +1,46 @@
+/* "Hyrule at night": deep forest greens, Triforce gold, parchment text */
 :root {
-  font-family: system-ui, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-head: 'Cinzel', 'Cambria', Georgia, serif;
+  --font-body: 'Nunito Sans', system-ui, 'Segoe UI', Arial, sans-serif;
+
+  --bg: #0e1a16;
+  --bg-glow: #17332a;
+  --panel: #142621;
+  --panel-raised: #1a302a;
+  --border: #2a4239;
+  --border-gold: rgba(226, 185, 59, 0.35);
+
+  --text: #f1ead6;        /* parchment */
+  --muted: #a3b1a8;
+  --gold: #e2b93b;        /* Triforce */
+  --gold-dim: #b8952c;
+  --green: #5cbf7e;       /* collected */
+  --track: #233a33;
+  --error: #ffb4a8;
+  --error-bg: #3d1f1b;
+
+  /* one color per item type */
+  --t-heart-piece: #ef6b73;
+  --t-heart-container: #d94c5a;
+  --t-bottle: #7fd1e8;
+  --t-song: #8fa8ff;
+  --t-quest-item: #e2b93b;
+  --t-inventory-item: #b69cf2;
+  --t-equipment: #f2a65a;
+  --t-upgrade: #5cbf7e;
+
+  color-scheme: dark;
+  font-family: var(--font-body);
   line-height: 1.5;
-  color-scheme: light dark;
-
-  --bg: #f6f7f4;
-  --card: #ffffff;
-  --text: #1f2421;
-  --muted: #66706a;
-  --border: #dde2dc;
-  --hover: #f0f4ef;
-  --track: #e4e8e3;
-  --accent: #2f7d4a;
-  --error: #8a1f1f;
-  --error-bg: #fbe4e4;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #141815;
-    --card: #1d221e;
-    --text: #e6ebe7;
-    --muted: #9aa49d;
-    --border: #2f3731;
-    --hover: #242b26;
-    --track: #2f3731;
-    --accent: #5cb87a;
-    --error: #ffb4b4;
-    --error-bg: #3a1c1c;
-  }
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  min-height: 100vh;
   color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 50% -200px, var(--bg-glow), transparent 70%),
+    var(--bg);
 }

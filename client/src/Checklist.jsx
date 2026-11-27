@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api } from './api'
+import ProgressRing from './ProgressRing'
 
 // Order of the counters in the Progress panel
 const TYPE_ORDER = [
@@ -7,6 +8,8 @@ const TYPE_ORDER = [
   'Quest Item', 'Inventory Item', 'Equipment', 'Upgrade',
 ]
 const typeRank = (type) => (TYPE_ORDER.includes(type) ? TYPE_ORDER.indexOf(type) : TYPE_ORDER.length)
+// "Heart Piece" -> "heart-piece", used for the color of each type
+const typeClass = (type) => 'type-' + type.toLowerCase().replace(/[^a-z]+/g, '-')
 
 function Checklist({ gameId, onBack, onAuthError }) {
   const [data, setData] = useState(null) // { game, locations: [{ locationNo, name, items: [...] }] }
@@ -45,7 +48,7 @@ function Checklist({ gameId, onBack, onAuthError }) {
   if (!data) {
     return (
       <section>
-        <button className="link" onClick={onBack}>← All games</button>
+        <button className="link back" onClick={onBack}>← All games</button>
         {error ? <p className="error">{error}</p> : <p className="muted">Loading checklist…</p>}
       </section>
     )
@@ -63,33 +66,43 @@ function Checklist({ gameId, onBack, onAuthError }) {
 
   return (
     <section>
-      <button className="link" onClick={onBack}>← All games</button>
-      <h1>{data.game.title}</h1>
+      <button className="link back" onClick={onBack}>← All games</button>
+      <div className="game-header">
+        <div>
+          <p className="eyebrow">{data.game.console} · {data.game.release_year}</p>
+          <h1 className="page-title">{data.game.title}</h1>
+        </div>
+        <ProgressRing value={collectedTotal} total={allItems.length} size={80} stroke={7} />
+      </div>
       {error && <p className="error">{error}</p>}
 
       <div className="checklist-layout">
         <div className="locations">
           {data.locations.map((loc) => {
             const done = loc.items.filter((i) => i.collected).length
+            const complete = done === loc.items.length
             return (
               // <details> is a built-in collapsible "dropdown" section
-              <details key={loc.locationNo} className="location">
+              <details key={loc.locationNo} className={complete ? 'panel location complete' : 'panel location'}>
                 <summary>
-                  <span>{loc.name}</span>
-                  <span className={done === loc.items.length ? 'count complete' : 'count'}>
-                    {done} / {loc.items.length}
+                  <span className="chevron" aria-hidden="true">›</span>
+                  <span className="location-name">{loc.name}</span>
+                  <span className="mini-bar" aria-hidden="true">
+                    <span style={{ width: `${(done / loc.items.length) * 100}%` }} />
                   </span>
+                  <span className="count">{done} / {loc.items.length}</span>
                 </summary>
                 <ul>
                   {loc.items.map((item) => (
                     <li key={item.itemNo}>
                       <label className={item.collected ? 'item collected' : 'item'}>
                         <input type="checkbox" checked={item.collected} onChange={() => toggle(item)} />
-                        <span>
+                        <span className="box" aria-hidden="true" />
+                        <span className="item-text">
                           <span className="item-name">{item.name}</span>
-                          <span className="item-type">{item.type}</span>
                           {item.hint && <span className="hint">{item.hint}</span>}
                         </span>
+                        <span className={`type-tag ${typeClass(item.type)}`}>{item.type}</span>
                       </label>
                     </li>
                   ))}
@@ -99,23 +112,23 @@ function Checklist({ gameId, onBack, onAuthError }) {
           })}
         </div>
 
-        <aside className="progress">
+        <aside className="panel progress">
           <h2>Progress</h2>
           {Object.entries(counts)
             .sort(([a], [b]) => typeRank(a) - typeRank(b))
             .map(([type, c]) => (
-            <div key={type} className="progress-row">
-              <div className="progress-label">
-                <span>{type}</span>
-                <span>{c.collected} / {c.total}</span>
+              <div key={type} className={`progress-row ${typeClass(type)}`}>
+                <div className="progress-label">
+                  <span><span className="dot" aria-hidden="true" />{type}</span>
+                  <span className="num">{c.collected} / {c.total}</span>
+                </div>
+                <span className="bar"><span style={{ width: `${(c.collected / c.total) * 100}%` }} /></span>
               </div>
-              <span className="bar"><span style={{ width: `${(c.collected / c.total) * 100}%` }} /></span>
-            </div>
-          ))}
+            ))}
           <div className="progress-row overall">
             <div className="progress-label">
               <span>Overall</span>
-              <span>{collectedTotal} / {allItems.length}</span>
+              <span className="num">{collectedTotal} / {allItems.length}</span>
             </div>
             <span className="bar"><span style={{ width: `${(collectedTotal / allItems.length) * 100}%` }} /></span>
           </div>

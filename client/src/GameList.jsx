@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api } from './api'
+import ProgressRing from './ProgressRing'
 
 function GameList({ onSelect, onAuthError }) {
   const [games, setGames] = useState(null)
@@ -16,19 +17,19 @@ function GameList({ onSelect, onAuthError }) {
 
   return (
     <section>
-      <h1>Choose a game</h1>
+      <p className="eyebrow">Your adventures</p>
+      <h1 className="page-title">Choose a game</h1>
       <div className="game-grid">
-        {games.map((game) => {
-          const percent = game.total ? Math.round((game.collected / game.total) * 100) : 0
-          return (
-            <button key={game.id} className="game-card" onClick={() => onSelect(game.id)}>
+        {games.map((game) => (
+          <button key={game.id} className="panel game-card" onClick={() => onSelect(game.id)}>
+            <span className="game-info">
+              <span className="console-tag">{game.console} · {game.release_year}</span>
               <span className="game-title">{game.title}</span>
-              <span className="muted">{game.release_year} · {game.console}</span>
-              <span className="bar"><span style={{ width: `${percent}%` }} /></span>
-              <span className="small">{game.collected} / {game.total} items · {percent}%</span>
-            </button>
-          )
-        })}
+              <span className="muted small">{game.collected} of {game.total} items collected</span>
+            </span>
+            <ProgressRing value={game.collected} total={game.total} size={72} />
+          </button>
+        ))}
       </div>
     </section>
   )
